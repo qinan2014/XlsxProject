@@ -13,6 +13,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "chartsheet", "examples\xlsx
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "hello", "examples\xlsx\conditionalformatting\hello.vcxproj", "{E240559A-50B8-3F22-A2B6-D55A32DCD169}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "datavalidation", "examples\xlsx\datavalidation\datavalidation.vcxproj", "{EC28D893-96DF-33AD-8B24-B0D37513E6D4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -43,6 +45,10 @@ Global
 		{E240559A-50B8-3F22-A2B6-D55A32DCD169}.Debug|Win32.Build.0 = Debug|Win32
 		{E240559A-50B8-3F22-A2B6-D55A32DCD169}.Release|Win32.ActiveCfg = Release|Win32
 		{E240559A-50B8-3F22-A2B6-D55A32DCD169}.Release|Win32.Build.0 = Release|Win32
+		{EC28D893-96DF-33AD-8B24-B0D37513E6D4}.Debug|Win32.ActiveCfg = Debug|Win32
+		{EC28D893-96DF-33AD-8B24-B0D37513E6D4}.Debug|Win32.Build.0 = Debug|Win32
+		{EC28D893-96DF-33AD-8B24-B0D37513E6D4}.Release|Win32.ActiveCfg = Release|Win32
+		{EC28D893-96DF-33AD-8B24-B0D37513E6D4}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
