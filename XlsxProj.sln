@@ -15,6 +15,10 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "hello", "examples\xlsx\cond
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "datavalidation", "examples\xlsx\datavalidation\datavalidation.vcxproj", "{EC28D893-96DF-33AD-8B24-B0D37513E6D4}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "definename", "examples\xlsx\definename\definename.vcxproj", "{D9DF4BB5-28FA-3298-8620-E3ACDCBFBDE0}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "demo", "examples\xlsx\demo\demo.vcxproj", "{F2C24902-0D63-3472-80F9-46C7A26014D4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -49,6 +53,14 @@ Global
 		{EC28D893-96DF-33AD-8B24-B0D37513E6D4}.Debug|Win32.Build.0 = Debug|Win32
 		{EC28D893-96DF-33AD-8B24-B0D37513E6D4}.Release|Win32.ActiveCfg = Release|Win32
 		{EC28D893-96DF-33AD-8B24-B0D37513E6D4}.Release|Win32.Build.0 = Release|Win32
+		{D9DF4BB5-28FA-3298-8620-E3ACDCBFBDE0}.Debug|Win32.ActiveCfg = Debug|Win32
+		{D9DF4BB5-28FA-3298-8620-E3ACDCBFBDE0}.Debug|Win32.Build.0 = Debug|Win32
+		{D9DF4BB5-28FA-3298-8620-E3ACDCBFBDE0}.Release|Win32.ActiveCfg = Release|Win32
+		{D9DF4BB5-28FA-3298-8620-E3ACDCBFBDE0}.Release|Win32.Build.0 = Release|Win32
+		{F2C24902-0D63-3472-80F9-46C7A26014D4}.Debug|Win32.ActiveCfg = Debug|Win32
+		{F2C24902-0D63-3472-80F9-46C7A26014D4}.Debug|Win32.Build.0 = Debug|Win32
+		{F2C24902-0D63-3472-80F9-46C7A26014D4}.Release|Win32.ActiveCfg = Release|Win32
+		{F2C24902-0D63-3472-80F9-46C7A26014D4}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
