@@ -29,3 +29,4 @@ ipch/
 XlsxProj.opensdf
 */**/*.vcxproj.filters
 */**/*.vcxproj.user
+*/**/*.xlsx
