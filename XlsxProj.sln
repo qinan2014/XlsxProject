@@ -9,6 +9,10 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "calendar", "examples\xlsx\c
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "chart", "examples\xlsx\chart\chart.vcxproj", "{1093F1C6-22C9-3295-A379-F1C984E2CBBB}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "chartsheet", "examples\xlsx\chartsheet\chartsheet.vcxproj", "{0C36EC78-2B4B-3DE0-BD40-BE4CBBA0C797}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "hello", "examples\xlsx\conditionalformatting\hello.vcxproj", "{E240559A-50B8-3F22-A2B6-D55A32DCD169}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -31,6 +35,14 @@ Global
 		{1093F1C6-22C9-3295-A379-F1C984E2CBBB}.Debug|Win32.Build.0 = Debug|Win32
 		{1093F1C6-22C9-3295-A379-F1C984E2CBBB}.Release|Win32.ActiveCfg = Release|Win32
 		{1093F1C6-22C9-3295-A379-F1C984E2CBBB}.Release|Win32.Build.0 = Release|Win32
+		{0C36EC78-2B4B-3DE0-BD40-BE4CBBA0C797}.Debug|Win32.ActiveCfg = Debug|Win32
+		{0C36EC78-2B4B-3DE0-BD40-BE4CBBA0C797}.Debug|Win32.Build.0 = Debug|Win32
+		{0C36EC78-2B4B-3DE0-BD40-BE4CBBA0C797}.Release|Win32.ActiveCfg = Release|Win32
+		{0C36EC78-2B4B-3DE0-BD40-BE4CBBA0C797}.Release|Win32.Build.0 = Release|Win32
+		{E240559A-50B8-3F22-A2B6-D55A32DCD169}.Debug|Win32.ActiveCfg = Debug|Win32
+		{E240559A-50B8-3F22-A2B6-D55A32DCD169}.Debug|Win32.Build.0 = Debug|Win32
+		{E240559A-50B8-3F22-A2B6-D55A32DCD169}.Release|Win32.ActiveCfg = Release|Win32
+		{E240559A-50B8-3F22-A2B6-D55A32DCD169}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
