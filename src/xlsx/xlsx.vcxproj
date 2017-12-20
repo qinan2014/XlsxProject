@@ -251,14 +251,6 @@ endlocal
     <ClInclude Include="xlsxzipreader_p.h" />
     <ClInclude Include="xlsxzipwriter_p.h" />
   </ItemGroup>
-  <ItemGroup>
-    <ResourceCompile Include="D:\QinAn\CompanyProgram\GitTest\QtXlsxWriter-master\src\xlsx\Qt5Xlsx_resource.rc">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
-    </ResourceCompile>
-    <ResourceCompile Include="D:\QinAn\CompanyProgram\GitTest\QtXlsxWriter-master\src\xlsx\Qt5Xlsxd_resource.rc">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
-    </ResourceCompile>
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets" />
   <ProjectExtensions>
