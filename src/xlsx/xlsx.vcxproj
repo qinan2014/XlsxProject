@@ -1,0 +1,269 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{B823BACC-5A05-30AF-BD0A-3F81B4398233}</ProjectGuid>
+    <RootNamespace>Qt5Xlsx</RootNamespace>
+    <Keyword>Qt4VSv1.0</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <PlatformToolSet>v110</PlatformToolSet>
+    <OutputDirectory>..\..\lib\</OutputDirectory>
+    <ATLMinimizesCRunTimeLibraryUsage>false</ATLMinimizesCRunTimeLibraryUsage>
+    <CharacterSet>NotSet</CharacterSet>
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <IntermediateDirectory>.obj\release\</IntermediateDirectory>
+    <PrimaryOutput>Qt5Xlsx</PrimaryOutput>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <PlatformToolSet>v110</PlatformToolSet>
+    <OutputDirectory>..\..\lib\</OutputDirectory>
+    <ATLMinimizesCRunTimeLibraryUsage>false</ATLMinimizesCRunTimeLibraryUsage>
+    <CharacterSet>NotSet</CharacterSet>
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <IntermediateDirectory>.obj\debug\</IntermediateDirectory>
+    <PrimaryOutput>Qt5Xlsxd</PrimaryOutput>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings" />
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">..\..\lib\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(Platform)\$(Configuration)\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Qt5Xlsx</TargetName>
+    <IgnoreImportLibrary Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</IgnoreImportLibrary>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkIncremental>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)\$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(Platform)\$(Configuration)\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Qt5Xlsxd</TargetName>
+    <IgnoreImportLibrary Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</IgnoreImportLibrary>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>.;..\..\include;..\..\include\QtXlsx;..\..\include\QtXlsx\0.3.0;..\..\include\QtXlsx\0.3.0\QtXlsx;tmp;.;D:\qt\qt5.5.1\5.5\msvc2012\include\QtGui\5.5.1;D:\qt\qt5.5.1\5.5\msvc2012\include\QtGui\5.5.1\QtGui;D:\qt\qt5.5.1\5.5\msvc2012\include;D:\qt\qt5.5.1\5.5\msvc2012\include\QtGui;D:\qt\qt5.5.1\5.5\msvc2012\include\QtANGLE;D:\qt\qt5.5.1\5.5\msvc2012\include\QtCore;.moc\release;D:\qt\qt5.5.1\5.5\msvc2012\mkspecs\win32-msvc2012;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>-w34100 -w34189 -w44996 %(AdditionalOptions)</AdditionalOptions>
+      <AssemblerListingLocation>.obj\release\</AssemblerListingLocation>
+      <BrowseInformation>false</BrowseInformation>
+      <DebugInformationFormat>None</DebugInformationFormat>
+      <ExceptionHandling>false</ExceptionHandling>
+      <ForcedIncludeFiles>..\..\include\QtXlsx\QtXlsxDepends;%(ForcedIncludeFiles)</ForcedIncludeFiles>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>..\..\include\QtXlsx\QtXlsxDepends</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile>$(IntDir)\Qt5Xlsx.pch</PrecompiledHeaderOutputFile>
+      <PreprocessorDefinitions>_HAS_EXCEPTIONS=0;_WINDOWS;UNICODE;WIN32;QT_BUILD_XLSX_LIB;QT_BUILDING_QT;_CRT_SECURE_NO_WARNINGS;_USE_MATH_DEFINES;QT_NO_CAST_TO_ASCII;QT_ASCII_CAST_WARNINGS;QT_MOC_COMPAT;QT_USE_QSTRINGBUILDER;QT_DEPRECATED_WARNINGS;QT_DISABLE_DEPRECATED_BEFORE=0x040800;QT_NO_EXCEPTIONS;QT_NO_DEBUG;QT_GUI_LIB;QT_CORE_LIB;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessToFile>false</PreprocessToFile>
+      <ProgramDataBaseFileName>$(IntDir)vc$(PlatformToolsetVersion).pdb</ProgramDataBaseFileName>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <WarningLevel>Level3</WarningLevel>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>$(QTDIR)\lib\Qt5Gui.lib;$(QTDIR)\lib\Qt5Core.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(QTDIR)\lib;D:\qt\qt5.5.1\5.5\msvc2012\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <DataExecutionPrevention>true</DataExecutionPrevention>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <IgnoreImportLibrary>true</IgnoreImportLibrary>
+      <LinkDLL>true</LinkDLL>
+      <LinkIncremental>false</LinkIncremental>
+      <OutputFile>$(OutDir)\Qt5Xlsx.dll</OutputFile>
+      <RandomizedBaseAddress>true</RandomizedBaseAddress>
+      <SubSystem>Windows</SubSystem>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <Version>0.3</Version>
+    </Link>
+    <Midl>
+      <DefaultCharType>Unsigned</DefaultCharType>
+      <EnableErrorChecks>None</EnableErrorChecks>
+      <WarningLevel>0</WarningLevel>
+    </Midl>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_HAS_EXCEPTIONS=0;_WINDOWS;UNICODE;WIN32;QT_BUILD_XLSX_LIB;QT_BUILDING_QT;_CRT_SECURE_NO_WARNINGS;_USE_MATH_DEFINES;QT_NO_CAST_TO_ASCII;QT_ASCII_CAST_WARNINGS;QT_MOC_COMPAT;QT_USE_QSTRINGBUILDER;QT_DEPRECATED_WARNINGS;QT_DISABLE_DEPRECATED_BEFORE=0x040800;QT_NO_EXCEPTIONS;QT_NO_DEBUG;QT_GUI_LIB;QT_CORE_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>.;..\..\include;..\..\include\QtXlsx;..\..\include\QtXlsx\0.3.0;..\..\include\QtXlsx\0.3.0\QtXlsx;tmp;.;D:\qt\qt5.5.1\5.5\msvc2012\include\QtGui\5.5.1;D:\qt\qt5.5.1\5.5\msvc2012\include\QtGui\5.5.1\QtGui;D:\qt\qt5.5.1\5.5\msvc2012\include;D:\qt\qt5.5.1\5.5\msvc2012\include\QtGui;D:\qt\qt5.5.1\5.5\msvc2012\include\QtANGLE;D:\qt\qt5.5.1\5.5\msvc2012\include\QtCore;.moc\debug;D:\qt\qt5.5.1\5.5\msvc2012\mkspecs\win32-msvc2012;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>-w34100 -w34189 -w44996 %(AdditionalOptions)</AdditionalOptions>
+      <AssemblerListingLocation>.obj\debug\</AssemblerListingLocation>
+      <BrowseInformation>false</BrowseInformation>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>false</ExceptionHandling>
+      <ForcedIncludeFiles>..\..\include\QtXlsx\QtXlsxDepends;%(ForcedIncludeFiles)</ForcedIncludeFiles>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <Optimization>Disabled</Optimization>
+      <PrecompiledHeader>Create</PrecompiledHeader>
+      <PrecompiledHeaderFile>..\..\include\QtXlsx\QtXlsxDepends</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile>$(IntDir)\Qt5Xlsxd.pch</PrecompiledHeaderOutputFile>
+      <PreprocessorDefinitions>_HAS_EXCEPTIONS=0;_WINDOWS;UNICODE;WIN32;QT_BUILD_XLSX_LIB;QT_BUILDING_QT;_CRT_SECURE_NO_WARNINGS;_USE_MATH_DEFINES;QT_NO_CAST_TO_ASCII;QT_ASCII_CAST_WARNINGS;QT_MOC_COMPAT;QT_USE_QSTRINGBUILDER;QT_DEPRECATED_WARNINGS;QT_DISABLE_DEPRECATED_BEFORE=0x040800;QT_NO_EXCEPTIONS;QT_GUI_LIB;QT_CORE_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessToFile>false</PreprocessToFile>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <WarningLevel>Level3</WarningLevel>
+      <ProgramDataBaseFileName>$(IntDir)vc$(PlatformToolsetVersion).pdb</ProgramDataBaseFileName>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>$(QTDIR)\lib\Qt5Guid.lib;$(QTDIR)\lib\Qt5Cored.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(QTDIR)\lib;D:\qt\qt5.5.1\5.5\msvc2012\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <DataExecutionPrevention>true</DataExecutionPrevention>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <IgnoreImportLibrary>true</IgnoreImportLibrary>
+      <LinkDLL>true</LinkDLL>
+      <OutputFile>$(OutDir)\Qt5Xlsxd.dll</OutputFile>
+      <RandomizedBaseAddress>true</RandomizedBaseAddress>
+      <SubSystem>Windows</SubSystem>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <Version>0.3</Version>
+    </Link>
+    <Midl>
+      <DefaultCharType>Unsigned</DefaultCharType>
+      <EnableErrorChecks>None</EnableErrorChecks>
+      <WarningLevel>0</WarningLevel>
+    </Midl>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_HAS_EXCEPTIONS=0;_WINDOWS;UNICODE;WIN32;QT_BUILD_XLSX_LIB;QT_BUILDING_QT;_CRT_SECURE_NO_WARNINGS;_USE_MATH_DEFINES;QT_NO_CAST_TO_ASCII;QT_ASCII_CAST_WARNINGS;QT_MOC_COMPAT;QT_USE_QSTRINGBUILDER;QT_DEPRECATED_WARNINGS;QT_DISABLE_DEPRECATED_BEFORE=0x040800;QT_NO_EXCEPTIONS;QT_GUI_LIB;QT_CORE_LIB;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="GeneratedFiles\Debug\moc_xlsxdocument.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_xlsxdocument.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="xlsxabstractooxmlfile.cpp" />
+    <ClCompile Include="xlsxabstractsheet.cpp" />
+    <ClCompile Include="xlsxcell.cpp" />
+    <ClCompile Include="xlsxcellformula.cpp" />
+    <ClCompile Include="xlsxcellrange.cpp" />
+    <ClCompile Include="xlsxcellreference.cpp" />
+    <ClCompile Include="xlsxchart.cpp" />
+    <ClCompile Include="xlsxchartsheet.cpp" />
+    <ClCompile Include="xlsxcolor.cpp" />
+    <ClCompile Include="xlsxconditionalformatting.cpp" />
+    <ClCompile Include="xlsxcontenttypes.cpp" />
+    <ClCompile Include="xlsxdatavalidation.cpp" />
+    <ClCompile Include="xlsxdocpropsapp.cpp" />
+    <ClCompile Include="xlsxdocpropscore.cpp" />
+    <ClCompile Include="xlsxdocument.cpp" />
+    <ClCompile Include="xlsxdrawing.cpp" />
+    <ClCompile Include="xlsxdrawinganchor.cpp" />
+    <ClCompile Include="xlsxformat.cpp" />
+    <ClCompile Include="xlsxmediafile.cpp" />
+    <ClCompile Include="xlsxnumformatparser.cpp" />
+    <ClCompile Include="xlsxrelationships.cpp" />
+    <ClCompile Include="xlsxrichstring.cpp" />
+    <ClCompile Include="xlsxsharedstrings.cpp" />
+    <ClCompile Include="xlsxsimpleooxmlfile.cpp" />
+    <ClCompile Include="xlsxstyles.cpp" />
+    <ClCompile Include="xlsxtheme.cpp" />
+    <ClCompile Include="xlsxutility.cpp" />
+    <ClCompile Include="xlsxworkbook.cpp" />
+    <ClCompile Include="xlsxworksheet.cpp" />
+    <ClCompile Include="xlsxzipreader.cpp" />
+    <ClCompile Include="xlsxzipwriter.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\include\QtXlsx\QtXlsxDepends" />
+    <ClInclude Include="xlsxabstractooxmlfile.h" />
+    <ClInclude Include="xlsxabstractooxmlfile_p.h" />
+    <ClInclude Include="xlsxabstractsheet.h" />
+    <ClInclude Include="xlsxabstractsheet_p.h" />
+    <ClInclude Include="xlsxcell.h" />
+    <ClInclude Include="xlsxcell_p.h" />
+    <ClInclude Include="xlsxcellformula.h" />
+    <ClInclude Include="xlsxcellformula_p.h" />
+    <ClInclude Include="xlsxcellrange.h" />
+    <ClInclude Include="xlsxcellreference.h" />
+    <ClInclude Include="xlsxchart.h" />
+    <ClInclude Include="xlsxchart_p.h" />
+    <ClInclude Include="xlsxchartsheet.h" />
+    <ClInclude Include="xlsxchartsheet_p.h" />
+    <ClInclude Include="xlsxcolor_p.h" />
+    <ClInclude Include="xlsxconditionalformatting.h" />
+    <ClInclude Include="xlsxconditionalformatting_p.h" />
+    <ClInclude Include="xlsxcontenttypes_p.h" />
+    <ClInclude Include="xlsxdatavalidation.h" />
+    <ClInclude Include="xlsxdatavalidation_p.h" />
+    <ClInclude Include="xlsxdocpropsapp_p.h" />
+    <ClInclude Include="xlsxdocpropscore_p.h" />
+    <CustomBuild Include="xlsxdocument.h">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">setlocal
+if errorlevel 1 goto VCEnd
+
+if errorlevel 1 goto VCEnd
+endlocal
+"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp" "-f../../include/QtXlsx/QtXlsxDepends" "-f../../xlsxdocument.h"  -D_HAS_EXCEPTIONS=0 -D_WINDOWS -DUNICODE -DWIN32 -DQT_BUILD_XLSX_LIB -DQT_BUILDING_QT -D_CRT_SECURE_NO_WARNINGS -D_USE_MATH_DEFINES -DQT_NO_CAST_TO_ASCII -DQT_ASCII_CAST_WARNINGS -DQT_MOC_COMPAT -DQT_USE_QSTRINGBUILDER -DQT_DEPRECATED_WARNINGS -DQT_DISABLE_DEPRECATED_BEFORE=0x040800 -DQT_NO_EXCEPTIONS -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_CORE_LIB -DNDEBUG -D_WINDLL "-I." "-I.\..\..\include" "-I.\..\..\include\QtXlsx" "-I.\..\..\include\QtXlsx\0.3.0" "-I.\..\..\include\QtXlsx\0.3.0\QtXlsx" "-I.\tmp" "-ID:\qt\qt5.5.1\5.5\msvc2012\include\QtGui\5.5.1" "-ID:\qt\qt5.5.1\5.5\msvc2012\include\QtGui\5.5.1\QtGui" "-ID:\qt\qt5.5.1\5.5\msvc2012\include" "-ID:\qt\qt5.5.1\5.5\msvc2012\include\QtGui" "-ID:\qt\qt5.5.1\5.5\msvc2012\include\QtANGLE" "-ID:\qt\qt5.5.1\5.5\msvc2012\include\QtCore" "-I.\.moc\release" "-ID:\qt\qt5.5.1\5.5\msvc2012\mkspecs\win32-msvc2012"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Moc%27ing xlsxdocument.h...</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">setlocal
+if errorlevel 1 goto VCEnd
+
+if errorlevel 1 goto VCEnd
+endlocal
+"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp" "-f../../include/QtXlsx/QtXlsxDepends" "-f../../xlsxdocument.h"  -D_HAS_EXCEPTIONS=0 -D_WINDOWS -DUNICODE -DWIN32 -DQT_BUILD_XLSX_LIB -DQT_BUILDING_QT -D_CRT_SECURE_NO_WARNINGS -D_USE_MATH_DEFINES -DQT_NO_CAST_TO_ASCII -DQT_ASCII_CAST_WARNINGS -DQT_MOC_COMPAT -DQT_USE_QSTRINGBUILDER -DQT_DEPRECATED_WARNINGS -DQT_DISABLE_DEPRECATED_BEFORE=0x040800 -DQT_NO_EXCEPTIONS -DQT_GUI_LIB -DQT_CORE_LIB -D_WINDLL "-I." "-I.\..\..\include" "-I.\..\..\include\QtXlsx" "-I.\..\..\include\QtXlsx\0.3.0" "-I.\..\..\include\QtXlsx\0.3.0\QtXlsx" "-I.\tmp" "-ID:\qt\qt5.5.1\5.5\msvc2012\include\QtGui\5.5.1" "-ID:\qt\qt5.5.1\5.5\msvc2012\include\QtGui\5.5.1\QtGui" "-ID:\qt\qt5.5.1\5.5\msvc2012\include" "-ID:\qt\qt5.5.1\5.5\msvc2012\include\QtGui" "-ID:\qt\qt5.5.1\5.5\msvc2012\include\QtANGLE" "-ID:\qt\qt5.5.1\5.5\msvc2012\include\QtCore" "-I.\.moc\debug" "-ID:\qt\qt5.5.1\5.5\msvc2012\mkspecs\win32-msvc2012"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Moc%27ing xlsxdocument.h...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+    </CustomBuild>
+    <ClInclude Include="xlsxdocument_p.h" />
+    <ClInclude Include="xlsxdrawing_p.h" />
+    <ClInclude Include="xlsxdrawinganchor_p.h" />
+    <ClInclude Include="xlsxformat.h" />
+    <ClInclude Include="xlsxformat_p.h" />
+    <ClInclude Include="xlsxglobal.h" />
+    <ClInclude Include="xlsxmediafile_p.h" />
+    <ClInclude Include="xlsxnumformatparser_p.h" />
+    <ClInclude Include="xlsxrelationships_p.h" />
+    <ClInclude Include="xlsxrichstring.h" />
+    <ClInclude Include="xlsxrichstring_p.h" />
+    <ClInclude Include="xlsxsharedstrings_p.h" />
+    <ClInclude Include="xlsxsimpleooxmlfile_p.h" />
+    <ClInclude Include="xlsxstyles_p.h" />
+    <ClInclude Include="xlsxtheme_p.h" />
+    <ClInclude Include="xlsxutility_p.h" />
+    <ClInclude Include="xlsxworkbook.h" />
+    <ClInclude Include="xlsxworkbook_p.h" />
+    <ClInclude Include="xlsxworksheet.h" />
+    <ClInclude Include="xlsxworksheet_p.h" />
+    <ClInclude Include="xlsxzipreader_p.h" />
+    <ClInclude Include="xlsxzipwriter_p.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="D:\QinAn\CompanyProgram\GitTest\QtXlsxWriter-master\src\xlsx\Qt5Xlsx_resource.rc">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ResourceCompile>
+    <ResourceCompile Include="D:\QinAn\CompanyProgram\GitTest\QtXlsxWriter-master\src\xlsx\Qt5Xlsxd_resource.rc">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ResourceCompile>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties Qt5Version_x0020_Win32="Qtx86" UicDir=".\GeneratedFiles" RccDir=".\GeneratedFiles" />
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>
