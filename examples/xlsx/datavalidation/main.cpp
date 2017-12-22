@@ -23,6 +23,8 @@ int main()
 	validation.setPromptMessage("Please Input Integer between 33 and 99");
 	xlsx.addDataValidation(validation);
 
+	xlsx.write("A6", "=A1");
+
     xlsx.save();
     return 0;
 }
