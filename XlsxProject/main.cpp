@@ -1,10 +1,10 @@
-#include "xlsxproj.h"
+#include "xlsxproject.h"
 #include <QtWidgets/QApplication>
 
 int main(int argc, char *argv[])
 {
 	QApplication a(argc, argv);
-	XlsxProj w;
+	XlsxProject w;
 	w.show();
 	return a.exec();
 }

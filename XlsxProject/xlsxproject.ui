@@ -1,8 +1,8 @@
 <UI version="4.0" >
- <class>XlsxProjClass</class>
- <widget class="QWidget" name="XlsxProjClass" >
+ <class>XlsxProjectClass</class>
+ <widget class="QWidget" name="XlsxProjectClass" >
   <property name="objectName" >
-   <string notr="true">XlsxProjClass</string>
+   <string notr="true">XlsxProjectClass</string>
   </property>
   <property name="geometry" >
    <rect>
@@ -13,13 +13,13 @@
    </rect>
   </property>
   <property name="windowTitle" >
-   <string>XlsxProj</string>
+   <string>XlsxProject</string>
   </property>
  </widget>
  <layoutDefault spacing="6" margin="11" />
  <pixmapfunction></pixmapfunction>
  <resources>
-   <include location="xlsxproj.qrc"/>
+   <include location="xlsxproject.qrc"/>
  </resources>
  <connections/>
 </UI>
