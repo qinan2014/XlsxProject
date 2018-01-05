@@ -14,6 +14,9 @@ public:
 
 private:
 	Ui::XlsxProjectClass ui;
+
+private slots:
+	void readNames();
 };
 
 #endif // XLSXPROJECT_H

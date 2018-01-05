@@ -1,8 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "XlsxProj", "XlsxProj\XlsxProj.vcxproj", "{B12702AD-ABFB-343A-A199-8E24837244A3}"
-EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "xlsx", "src\xlsx\xlsx.vcxproj", "{B823BACC-5A05-30AF-BD0A-3F81B4398233}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "calendar", "examples\xlsx\calendar\calendar.vcxproj", "{91DCAC1E-ED8B-3A6F-971F-98DD8C5E777E}"
@@ -37,16 +35,14 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "worksheetoperations", "exam
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "xlsxwidget", "examples\xlsx\xlsxwidget\xlsxwidget.vcxproj", "{0103B923-FD3D-3C78-8281-73A56D2E2ACE}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "XlsxProject", "XlsxProject\XlsxProject.vcxproj", "{B12702AD-ABFB-343A-A199-8E24837244A3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
 		Release|Win32 = Release|Win32
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{B12702AD-ABFB-343A-A199-8E24837244A3}.Debug|Win32.ActiveCfg = Debug|Win32
-		{B12702AD-ABFB-343A-A199-8E24837244A3}.Debug|Win32.Build.0 = Debug|Win32
-		{B12702AD-ABFB-343A-A199-8E24837244A3}.Release|Win32.ActiveCfg = Release|Win32
-		{B12702AD-ABFB-343A-A199-8E24837244A3}.Release|Win32.Build.0 = Release|Win32
 		{B823BACC-5A05-30AF-BD0A-3F81B4398233}.Debug|Win32.ActiveCfg = Debug|Win32
 		{B823BACC-5A05-30AF-BD0A-3F81B4398233}.Debug|Win32.Build.0 = Debug|Win32
 		{B823BACC-5A05-30AF-BD0A-3F81B4398233}.Release|Win32.ActiveCfg = Release|Win32
@@ -115,6 +111,10 @@ Global
 		{0103B923-FD3D-3C78-8281-73A56D2E2ACE}.Debug|Win32.Build.0 = Debug|Win32
 		{0103B923-FD3D-3C78-8281-73A56D2E2ACE}.Release|Win32.ActiveCfg = Release|Win32
 		{0103B923-FD3D-3C78-8281-73A56D2E2ACE}.Release|Win32.Build.0 = Release|Win32
+		{B12702AD-ABFB-343A-A199-8E24837244A3}.Debug|Win32.ActiveCfg = Debug|Win32
+		{B12702AD-ABFB-343A-A199-8E24837244A3}.Debug|Win32.Build.0 = Debug|Win32
+		{B12702AD-ABFB-343A-A199-8E24837244A3}.Release|Win32.ActiveCfg = Release|Win32
+		{B12702AD-ABFB-343A-A199-8E24837244A3}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
