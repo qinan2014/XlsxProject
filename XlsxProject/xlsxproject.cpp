@@ -7,6 +7,7 @@ XlsxProject::XlsxProject(QWidget *parent)
 {
 	ui.setupUi(this);
 	connect(ui.pbt_read_names, SIGNAL(clicked()), this, SLOT(readNames()));
+	connect(ui.pbt_export, SIGNAL(clicked()), this, SLOT(exportList()));
 }
 
 XlsxProject::~XlsxProject()
@@ -45,4 +46,9 @@ void XlsxProject::readNameFromxls(QXlsx::Document &pDocXls, std::list<Single_Mem
 			tmpMember.s_name = name.toStdWString();
 		}
 	}
+}
+
+void XlsxProject::exportList()
+{
+
 }

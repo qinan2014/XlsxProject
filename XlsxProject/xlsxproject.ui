@@ -26,6 +26,19 @@
     <string>读取名字</string>
    </property>
   </widget>
+  <widget class="QPushButton" name="pbt_export">
+   <property name="geometry">
+    <rect>
+     <x>130</x>
+     <y>10</y>
+     <width>93</width>
+     <height>28</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>导出排表</string>
+   </property>
+  </widget>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <resources>

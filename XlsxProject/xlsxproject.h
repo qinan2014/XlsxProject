@@ -21,6 +21,7 @@ private:
 
 private slots:
 	void readNames();
+	void exportList();
 };
 
 #endif // XLSXPROJECT_H
