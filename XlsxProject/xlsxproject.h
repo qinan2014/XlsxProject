@@ -3,6 +3,8 @@
 
 #include <QtWidgets/QWidget>
 #include "ui_xlsxproject.h"
+#include "xlsxdocument.h"
+#include "SingleMember.h"
 
 class XlsxProject : public QWidget
 {
@@ -14,6 +16,8 @@ public:
 
 private:
 	Ui::XlsxProjectClass ui;
+
+	void readNameFromxls(QXlsx::Document &pDocXls, std::list<Single_Member> &pOutMembers);
 
 private slots:
 	void readNames();
