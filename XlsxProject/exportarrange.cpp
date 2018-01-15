@@ -85,6 +85,7 @@ void ExportArrange::arrangeOneMass(int pWeek, int pMass, bool charchPos[4], bool
 			parkPosIndex = arrangeOneMassPark(pWeek, pMass, parkPos, tmpMember);
 		else
 			charchPosIndex = arrangeOneMassCharch(pWeek, pMass, charchPos, tmpMember);
+		tmpMember = getOneSingleMemberByIterator();
 	}
 }
 
