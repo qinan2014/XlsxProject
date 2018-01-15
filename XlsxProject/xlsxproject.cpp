@@ -18,7 +18,7 @@ XlsxProject::~XlsxProject()
 void XlsxProject::readNames()
 {
 #define NOTHCHARCHPATH "noth_charch_path"
-	QSettings settings("bbqinan", "NothCharch");
+	QSettings settings("bbqinan", "NothCharchImport");
 	QString oriPath = settings.value(NOTHCHARCHPATH).toString();
 	QString fileName = QFileDialog::getOpenFileName(this, tr("Open File"), oriPath,
 		tr("XLSX (*.xlsx)"));
@@ -50,5 +50,11 @@ void XlsxProject::readNameFromxls(QXlsx::Document &pDocXls, std::list<Single_Mem
 
 void XlsxProject::exportList()
 {
-
+#define NOTHCHARCHPATH "noth_charch_path"
+	QSettings settings("bbqinan", "NothCharchExport");
+	QString oriPath = settings.value(NOTHCHARCHPATH).toString();
+	QString fileName = QFileDialog::getSaveFileName(this, tr("Save File"), oriPath, tr("XLSX (*.xlsx)"));
+	settings.setValue(NOTHCHARCHPATH, fileName);
+#undef NOTHCHARCHPATH
+	
 }
