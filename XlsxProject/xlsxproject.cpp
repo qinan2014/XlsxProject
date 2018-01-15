@@ -57,5 +57,6 @@ void XlsxProject::exportList()
 	QString fileName = QFileDialog::getSaveFileName(this, tr("Save File"), oriPath, tr("XLSX (*.xlsx)"));
 	settings.setValue(NOTHCHARCHPATH, fileName);
 #undef NOTHCHARCHPATH
-	ExportArrange arrange(fileName, this);
+	std::list<Single_Member> members;
+	ExportArrange arrange(fileName, members, this);
 }
