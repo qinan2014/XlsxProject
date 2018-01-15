@@ -1,6 +1,7 @@
 #include "xlsxproject.h"
 #include <QFileDialog>
 #include <QSettings>
+#include "exportarrange.h"
 
 XlsxProject::XlsxProject(QWidget *parent)
 	: QWidget(parent)
@@ -56,5 +57,5 @@ void XlsxProject::exportList()
 	QString fileName = QFileDialog::getSaveFileName(this, tr("Save File"), oriPath, tr("XLSX (*.xlsx)"));
 	settings.setValue(NOTHCHARCHPATH, fileName);
 #undef NOTHCHARCHPATH
-	
+	ExportArrange arrange(fileName, this);
 }
