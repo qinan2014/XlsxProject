@@ -170,24 +170,21 @@ void ExportArrange::exportMemberArrange()
 		exportOneMember(beginRow, tmpMember);
 		++beginRow;
 	}
-	QXlsx::DataValidation validationPre;
-	validationPre.setFormula1("\" ,堂内,车场\"");
-	QXlsx::DataValidation validationAct;
-	validationAct.setFormula1("\" ,堂内,献宜,车场\"");
+	QXlsx::DataValidation validation(QXlsx::DataValidation::List, QXlsx::DataValidation::Between, "33", "35");
+	validation.setFormula1(QString::fromLocal8Bit("\"_,堂内,献宜,车场\""));
 	int beginColumn = 2;
 	for (int i = 0; i < WEEKSCOUNT; ++i)
 	{
 		for (int j = 0; j < WEEK_ALL_SERVICE_TIME; ++j)
 		{
 			QXlsx::CellRange rangePre(1, beginColumn, beginRow - 1, beginColumn);
-			validationPre.addRange(rangePre);
+			validation.addRange(rangePre);
 			QXlsx::CellRange rangeAct(1, beginColumn + 1, beginRow - 1, beginColumn + 1);
-			validationAct.addRange(rangeAct);
+			validation.addRange(rangeAct);
 			beginColumn += 2;
 		}
 	}
-	expoetXlsx.addDataValidation(validationPre);
-	expoetXlsx.addDataValidation(validationAct);
+	expoetXlsx.addDataValidation(validation);
 }
 
 void ExportArrange::exportOneMember(int writeRow, const Member_Arrange &pMember)
