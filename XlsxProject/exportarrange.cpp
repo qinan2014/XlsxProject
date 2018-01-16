@@ -11,6 +11,7 @@ ExportArrange::ExportArrange(const QString &pExportPath, std::list<Single_Member
 	arrangeOneMonth();
 	exportMemberArrange();
 	exportEveryWeekStatic();
+	exportMonthStatic();
 	expoetXlsx.saveAs(exportPath);
 }
 
@@ -236,4 +237,21 @@ void ExportArrange::exportEveryWeekStatic()
 			++beginColumn;
 		}
 	}
+}
+
+void ExportArrange::exportMonthStatic()
+{
+	QXlsx::Format dateHeaderStyle;
+	dateHeaderStyle.setFontSize(10);
+	dateHeaderStyle.setHorizontalAlignment(QXlsx::Format::AlignHCenter);
+	dateHeaderStyle.setVerticalAlignment(QXlsx::Format::AlignVCenter);
+	int beginStaticColumn = WEEKSCOUNT * 4 + 1 + 1;
+
+	expoetXlsx.write(1, beginStaticColumn , QString::fromLocal8Bit("安排次数"));
+	QXlsx::CellRange mergeRange(1, beginStaticColumn, 2, beginStaticColumn);
+	expoetXlsx.mergeCells(mergeRange, dateHeaderStyle);
+	
+	expoetXlsx.write(1, beginStaticColumn + 1 , QString::fromLocal8Bit("安排车场次数"));
+	QXlsx::CellRange mergeRange1(1, beginStaticColumn + 1, 2, beginStaticColumn + 1);
+	expoetXlsx.mergeCells(mergeRange1, dateHeaderStyle);
 }

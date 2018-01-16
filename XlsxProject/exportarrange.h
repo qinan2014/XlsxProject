@@ -26,6 +26,7 @@ private:
 	void exportMemberArrange();
 	void exportOneMember(int writeRow, const Member_Arrange &pMember);
 	void exportEveryWeekStatic();
+	void exportMonthStatic();
 
 	void arrangeOneMonth();
 	void arrangeOneWeekMass(int pWeek);
