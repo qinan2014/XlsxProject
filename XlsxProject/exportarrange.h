@@ -25,6 +25,7 @@ private:
 	void writeDateCell(int colum, const QString &pDate, const QXlsx::Format &dateStyle);
 	void exportMemberArrange();
 	void exportOneMember(int writeRow, const Member_Arrange &pMember);
+	void exportEveryWeekStatic();
 
 	void arrangeOneMonth();
 	void arrangeOneWeekMass(int pWeek);

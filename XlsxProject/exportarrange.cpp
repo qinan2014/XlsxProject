@@ -1,6 +1,7 @@
 ﻿#include "exportarrange.h"
 #include <QDate>
 #include "xlsxformat.h"
+#include "xlsxconditionalformatting.h"
 
 ExportArrange::ExportArrange(const QString &pExportPath, std::list<Single_Member> &pallMembers, QObject *parent)
 	: QObject(parent), exportPath(pExportPath), allMembers(pallMembers)
@@ -9,6 +10,7 @@ ExportArrange::ExportArrange(const QString &pExportPath, std::list<Single_Member
 	exportDataTime();
 	arrangeOneMonth();
 	exportMemberArrange();
+	exportEveryWeekStatic();
 	expoetXlsx.saveAs(exportPath);
 }
 
@@ -204,4 +206,34 @@ void ExportArrange::exportOneMember(int writeRow, const Member_Arrange &pMember)
 		}
 	}
 
+}
+
+void ExportArrange::exportEveryWeekStatic()
+{
+	int membersz = allMembers.size();
+	int rowStatic = membersz + 2 + 1;
+	QXlsx::Format format;
+	format.setFontColor(QColor(Qt::blue));
+	format.setFontSize(12);
+	expoetXlsx.write(rowStatic, 1, QString::fromLocal8Bit("服务统计"));
+	expoetXlsx.setRowFormat(rowStatic, rowStatic, format);
+
+	int beginColumn = 2;
+	for (int i = 0; i < WEEKSCOUNT; ++i)
+	{
+		for (int j = 0; j < WEEK_ALL_SERVICE_TIME; ++j)
+		{
+			char rangchar[20];
+			sprintf(rangchar, "%c%d:%c%d", beginColumn + 64, 3, beginColumn + 64, rowStatic - 1);
+			char selectedchar[100];
+			sprintf(selectedchar, "=COUNTIF(%s,\"车场\")+COUNTIF(%s,\"献宜\")+COUNTIF(%s,\"堂内\")", rangchar, rangchar, rangchar);
+			QString funcStr = QString::fromLocal8Bit(selectedchar);
+			expoetXlsx.write(rowStatic, beginColumn, funcStr);
+			++beginColumn;
+			sprintf(rangchar, "%c%d:%c%d", beginColumn + 64, 3, beginColumn + 64, rowStatic - 1);
+			sprintf(selectedchar, "=COUNTIF(%s,\"车场\")+COUNTIF(%s,\"献宜\")+COUNTIF(%s,\"堂内\")", rangchar, rangchar, rangchar);
+			expoetXlsx.write(rowStatic, beginColumn, funcStr);
+			++beginColumn;
+		}
+	}
 }
