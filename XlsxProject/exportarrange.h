@@ -22,7 +22,9 @@ private:
 
 
 	void exportDataTime();
-	void writeDateCell(const QString &pDate, char writeCell, const QXlsx::Format &dateStyle);
+	void writeDateCell(int colum, const QString &pDate, const QXlsx::Format &dateStyle);
+	void exportMemberArrange();
+	void exportOneMember(int writeRow, const Member_Arrange &pMember);
 
 	void arrangeOneMonth();
 	void arrangeOneWeekMass(int pWeek);

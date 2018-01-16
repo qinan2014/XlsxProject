@@ -29,32 +29,29 @@ void ExportArrange::exportDataTime()
 	
 	QDate mBeginDate(2018, 1, 7);
 	QDate mEndDate(2018, 2, 1);
-	char beginColumCell = 'B';
+	int beginColumCell = 2;
 	while (mEndDate > mBeginDate)
 	{
 		QString dataStr = mBeginDate.toString("yyyy.MM.dd");
 		QString dataStr1 = dataStr + QString::fromLocal8Bit(" 4点");
-		writeDateCell(dataStr1, beginColumCell, dateHeaderStyle);
-
+		writeDateCell(beginColumCell, dataStr1, dateHeaderStyle);
+		
 		QString dataStr2 = dataStr + QString::fromLocal8Bit(" 6点");
-		writeDateCell(dataStr2, beginColumCell + 2, dateHeaderStyle);
+		writeDateCell(beginColumCell + 2, dataStr2, dateHeaderStyle);
 
 		mBeginDate = mBeginDate.addDays(7);
 		beginColumCell += 4;
 	}
 }
 
-void ExportArrange::writeDateCell(const QString &pDate, char writeCell, const QXlsx::Format &dateStyle)
+void ExportArrange::writeDateCell(int colum, const QString &pDate, const QXlsx::Format &dateStyle)
 {
-	QString beginCell = QString("%1%2").arg(writeCell).arg('1');
-	expoetXlsx.write(beginCell , pDate);
-	char endCell = writeCell + 1;
-	QString mergeEnd = QString("%1%2").arg(endCell).arg('1');
-	QString mergeCell = beginCell + ':' + mergeEnd;
-	expoetXlsx.mergeCells(mergeCell, dateStyle);
-	expoetXlsx.setColumnWidth(writeCell - 64, writeCell - 63, 12);
-	expoetXlsx.write(QString("%1%2").arg(writeCell).arg('2') , QString::fromLocal8Bit("预先安排"));
-	expoetXlsx.write(QString("%1%2").arg(endCell).arg('2') , QString::fromLocal8Bit("实际服务"));
+	expoetXlsx.write(1, colum , pDate);
+	QXlsx::CellRange mergeRange(1, colum, 1, colum + 1);
+	expoetXlsx.mergeCells(mergeRange, dateStyle);
+	expoetXlsx.setColumnWidth(colum, colum + 1, 12);
+	expoetXlsx.write(2, colum , QString::fromLocal8Bit("预先安排"));
+	expoetXlsx.write(2, colum + 1 , QString::fromLocal8Bit("实际服务"));
 }
 
 void ExportArrange::arrangeOneMonth()
@@ -158,4 +155,18 @@ Single_Member *ExportArrange::getOneSingleMemberByIterator()
 	Single_Member &tmpMember = (Single_Member &)currentNameIndex;
 	++currentNameIndex;
 	return &tmpMember;
+}
+
+void ExportArrange::exportMemberArrange()
+{
+	for (std::list<Member_Arrange>::iterator it = allArrangeMembers.begin(); it != allArrangeMembers.end(); ++it)
+	{
+		Member_Arrange &tmpMember = (Member_Arrange &)it;
+		exportOneMember(tmpMember);
+	}
+}
+
+void ExportArrange::exportOneMember(const Member_Arrange &pMember)
+{
+
 }
