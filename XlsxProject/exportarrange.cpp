@@ -8,6 +8,7 @@ ExportArrange::ExportArrange(const QString &pExportPath, std::list<Single_Member
 	currentNameIndex = allMembers.begin();
 	exportDataTime();
 	arrangeOneMonth();
+	exportMemberArrange();
 	expoetXlsx.saveAs(exportPath);
 }
 
@@ -67,6 +68,8 @@ void ExportArrange::arrangeOneWeekMass(int pWeek)
 {
 	bool charchService[2][4];
 	bool parkService[2][2];
+	memset(charchService, 0, sizeof(charchService));
+	memset(parkService, 0, sizeof(parkService));
 	arrangeOneMass(pWeek, 0, charchService[0], parkService[0]);
 	arrangeOneMass(pWeek, 1, charchService[1], parkService[1]);
 }
@@ -116,13 +119,14 @@ int ExportArrange::arrangeOneMassPark(int pWeek, int pMass, bool parkPos[2], Sin
 
 void ExportArrange::insertArrange(int pWeek, int pMass, const Single_Member &pMember, int pPos)
 {
-	if (pPos != ARRANGE_ERROR)
+	if (pPos == ARRANGE_ERROR)
 		return;
 	Member_Arrange *tmpMember = searchArrangeDetail(pMember.s_name);
 	if (tmpMember == NULL)
 	{
 		allArrangeMembers.push_back(Member_Arrange());
-		tmpMember = (Member_Arrange *)&allArrangeMembers.back();
+		Member_Arrange &arrangeMember = allArrangeMembers.back();
+		tmpMember = &arrangeMember;
 	}
 	
 	tmpMember->s_name = pMember.s_name;
@@ -137,7 +141,7 @@ Member_Arrange *ExportArrange::searchArrangeDetail(const std::wstring &arrangeNa
 	Member_Arrange *mArrange = NULL;
 	for (std::list<Member_Arrange>::iterator it = allArrangeMembers.begin(); it != allArrangeMembers.end(); ++it)
 	{
-		Member_Arrange &tmpMember = (Member_Arrange &)it;
+		Member_Arrange &tmpMember = (Member_Arrange &)*it;
 		if (tmpMember.s_name == arrangeName)
 		{
 			mArrange = &tmpMember;
@@ -152,21 +156,55 @@ Single_Member *ExportArrange::getOneSingleMemberByIterator()
 	if (currentNameIndex == allMembers.end())
 		currentNameIndex = allMembers.begin();
 	
-	Single_Member &tmpMember = (Single_Member &)currentNameIndex;
+	Single_Member &tmpMember = (Single_Member &)*currentNameIndex;
 	++currentNameIndex;
 	return &tmpMember;
 }
 
 void ExportArrange::exportMemberArrange()
 {
+	int beginRow = 3;
 	for (std::list<Member_Arrange>::iterator it = allArrangeMembers.begin(); it != allArrangeMembers.end(); ++it)
 	{
-		Member_Arrange &tmpMember = (Member_Arrange &)it;
-		exportOneMember(tmpMember);
+		Member_Arrange &tmpMember = (Member_Arrange &)*it;
+		exportOneMember(beginRow, tmpMember);
+		++beginRow;
 	}
+	QXlsx::DataValidation validationPre;
+	validationPre.setFormula1("\" ,堂内,车场\"");
+	QXlsx::DataValidation validationAct;
+	validationAct.setFormula1("\" ,堂内,献宜,车场\"");
+	int beginColumn = 2;
+	for (int i = 0; i < WEEKSCOUNT; ++i)
+	{
+		for (int j = 0; j < WEEK_ALL_SERVICE_TIME; ++j)
+		{
+			QXlsx::CellRange rangePre(1, beginColumn, beginRow - 1, beginColumn);
+			validationPre.addRange(rangePre);
+			QXlsx::CellRange rangeAct(1, beginColumn + 1, beginRow - 1, beginColumn + 1);
+			validationAct.addRange(rangeAct);
+			beginColumn += 2;
+		}
+	}
+	expoetXlsx.addDataValidation(validationPre);
+	expoetXlsx.addDataValidation(validationAct);
 }
 
-void ExportArrange::exportOneMember(const Member_Arrange &pMember)
+void ExportArrange::exportOneMember(int writeRow, const Member_Arrange &pMember)
 {
+	QString tmpName = QString::fromStdWString(pMember.s_name);
+	expoetXlsx.write(writeRow, 1 , tmpName);
+	int beginColumn = 2;
+	for (int i = 0; i < WEEKSCOUNT; ++i)
+	{
+		for (int j = 0; j < WEEK_ALL_SERVICE_TIME; ++j)
+		{
+			if (pMember.is_in_park[i][j])
+				expoetXlsx.write(writeRow, beginColumn , QString::fromLocal8Bit("车场"));
+			else if (pMember.pre_service_week[i][j])
+				expoetXlsx.write(writeRow, beginColumn , QString::fromLocal8Bit("堂内"));
+			beginColumn += 2;
+		}
+	}
 
 }

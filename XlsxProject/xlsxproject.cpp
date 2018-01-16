@@ -26,8 +26,7 @@ void XlsxProject::readNames()
 	settings.setValue(NOTHCHARCHPATH, fileName);
 #undef NOTHCHARCHPATH
 	QXlsx::Document xlsx(fileName);
-	std::list<Single_Member> members;
-	readNameFromxls(xlsx, members);
+	readNameFromxls(xlsx, allMembers);
 	
 }
 
@@ -45,6 +44,7 @@ void XlsxProject::readNameFromxls(QXlsx::Document &pDocXls, std::list<Single_Mem
 			pOutMembers.push_back(Single_Member());
 			Single_Member &tmpMember = pOutMembers.back();
 			tmpMember.s_name = name.toStdWString();
+			tmpMember.park_skill = 2;
 		}
 	}
 }
@@ -57,6 +57,5 @@ void XlsxProject::exportList()
 	QString fileName = QFileDialog::getSaveFileName(this, tr("Save File"), oriPath, tr("XLSX (*.xlsx)"));
 	settings.setValue(NOTHCHARCHPATH, fileName);
 #undef NOTHCHARCHPATH
-	std::list<Single_Member> members;
-	ExportArrange arrange(fileName, members, this);
+	ExportArrange arrange(fileName, allMembers, this);
 }

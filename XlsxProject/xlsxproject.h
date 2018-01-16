@@ -16,6 +16,7 @@ public:
 
 private:
 	Ui::XlsxProjectClass ui;
+	std::list<Single_Member> allMembers;
 
 	void readNameFromxls(QXlsx::Document &pDocXls, std::list<Single_Member> &pOutMembers);
 

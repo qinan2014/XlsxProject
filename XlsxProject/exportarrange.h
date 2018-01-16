@@ -4,6 +4,7 @@
 #include <QObject>
 #include "xlsxdocument.h"
 #include "SingleMember.h"
+#include "xlsxdatavalidation.h"
 
 class ExportArrange : public QObject
 {
@@ -19,7 +20,6 @@ private:
 	std::list<Single_Member> &allMembers;
 	std::list<Member_Arrange> allArrangeMembers;
 	std::list<Single_Member>::iterator currentNameIndex; // 所有成员的迭代器
-
 
 	void exportDataTime();
 	void writeDateCell(int colum, const QString &pDate, const QXlsx::Format &dateStyle);
